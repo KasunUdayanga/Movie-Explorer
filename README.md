@@ -24,9 +24,14 @@
 - **Axios**: For making API requests.
 - **TMDb API**: For fetching movie data and trailers.
 
+
+ Added the deployment link:   [Movie Explorer - Live Demo](https://movie-explorer-beryl-three.vercel.app/)
 ### How to Run the Project
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone https://github.com/kasunUdayanga/Movie-Explorer.git
    cd Movie-Explorer
+
+ - Added the deployment link:   [Movie Explorer - Live Demo](https://movie-explorer-beryl-three.vercel.app/)
+
