@@ -45,14 +45,14 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-purple-900 via-gray-900 to-black text-white">
         <p className="text-lg font-semibold">Loading movies...</p>
       </div>
     );
   }
 
   return (
-    <div className="p-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white min-h-screen">
+    <div className="p-6 bg-gradient-to-b from-blue-900 via-gray-500 to-black text-white min-h-screen">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <h1 className="text-5xl font-extrabold mb-8 text-center text-blue-500">
