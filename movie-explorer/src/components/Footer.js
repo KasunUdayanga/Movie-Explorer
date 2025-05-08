@@ -2,9 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white p-4 mt-6">
+    <footer className="bg-blue-900 text-gray-100 py-5">
       <div className="container mx-auto text-center">
-        <p>&copy; 2025 Movie Explorer. All rights reserved.</p>
+        <p className="text-sm">
+          &copy; {new Date().getFullYear()} <span className=" font-bold">Movie Explorer</span>. All rights reserved.
+        </p>
       </div>
     </footer>
   );

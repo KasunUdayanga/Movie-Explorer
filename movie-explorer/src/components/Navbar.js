@@ -1,22 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import DarkModeToggle from './DarkModeToggle.js';
+
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold">
+    <nav className="bg-blue-900 text-gray-100  shadow-lg">
+      <div className="container mx-auto flex justify-between items-center p-4">
+        {/* Logo */}
+        <Link to="/" className="text-2xl font-bold  hover:text-blue-400 transition">
           Movie Explorer
         </Link>
-        <div className="space-x-4">
-          <Link to="/" className="hover:text-gray-400">
+
+        {/* Navigation Links */}
+        <div className="flex items-center space-x-6">
+          <Link
+            to="/"
+            className="text-lg hover:text-blue-400 transition"
+          >
             Home
           </Link>
-          <Link to="/favorites" className="hover:text-gray-400">
+          <Link
+            to="/favorites"
+            className="text-lg hover:text-blue-400 transition"
+          >
             Favorites
           </Link>
-          <DarkModeToggle/>
+      
+
         </div>
       </div>
     </nav>

@@ -10,12 +10,12 @@ const FavoritesPage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Your Favorite Movies</h1>
+    <div className="p-6 bg-gray-900 text-white min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 text-center">Your Favorite Movies</h1>
       {favorites.length === 0 ? (
-        <p>You have no favorite movies yet.</p>
+        <p className="text-gray-500 text-center">You have no favorite movies yet.</p>
       ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {favorites.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}

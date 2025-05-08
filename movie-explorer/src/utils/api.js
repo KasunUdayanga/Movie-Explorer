@@ -44,3 +44,14 @@ export const fetchMovieDetails = async (movieId) => {
     throw error;
   }
 };
+export const fetchMovieVideos = async (movieId) => {
+    try {
+      const response = await axiosInstance.get(`/movie/${movieId}/videos`, {
+        params: { language: 'en-US' },
+      });
+      return response.data.results; 
+    } catch (error) {
+      console.error('Error fetching movie videos:', error);
+      throw error;
+    }
+  };
