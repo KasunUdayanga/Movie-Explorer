@@ -16,20 +16,20 @@ const Favorites = () => {
   };
 
   return (
-    <div>
-      <h2>Your Favorite Movies</h2>
+    <div className="p-6">
+      <h2 className="text-2xl font-bold mb-4 text-gray-800">Your Favorite Movies</h2>
       {favorites.length === 0 ? (
-        <p>You have no favorite movies yet.</p>
+        <p className="text-gray-500">You have no favorite movies yet.</p>
       ) : (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {favorites.map((movie) => (
-            <div key={movie.id}>
+            <div key={movie.id} className="relative group">
               <MovieCard movie={movie} />
               <button
                 onClick={() => removeFavorite(movie.id)}
-                style={{ marginTop: '8px', padding: '8px', backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '4px' }}
+                className="absolute top-2 right-2 bg-red-500 text-white px-3 py-1 rounded shadow hover:bg-red-600 transition"
               >
-                Remove from Favorites
+                Remove
               </button>
             </div>
           ))}

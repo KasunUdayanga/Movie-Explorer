@@ -1,37 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchMovieDetails } from '../utils/api';
+import React from 'react';
 
-const MovieDetailsPage = () => {
-  const { id } = useParams();
-  const [movie, setMovie] = useState(null);
-
-  useEffect(() => {
-    const getMovieDetails = async () => {
-      const movieDetails = await fetchMovieDetails(id);
-      setMovie(movieDetails);
-    };
-    getMovieDetails();
-  }, [id]);
-
+const MovieDetails = ({ movie }) => {
   if (!movie) {
-    return <p>Loading...</p>;
+    return <p className="text-gray-500">Loading...</p>;
   }
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">{movie.title}</h1>
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        style={{ width: '300px', borderRadius: '8px' }}
+        className="w-full max-w-md rounded-lg shadow-md mb-6"
       />
-      <p><strong>Overview:</strong> {movie.overview}</p>
-      <p><strong>Genres:</strong> {movie.genres.map((genre) => genre.name).join(', ')}</p>
-      <p><strong>Release Date:</strong> {movie.release_date}</p>
-      <p><strong>Rating:</strong> {movie.vote_average}</p>
+      <p className="text-gray-700 mb-4">
+        <strong>Overview:</strong> {movie.overview}
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>Genres:</strong> {movie.genres.map((genre) => genre.name).join(', ')}
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>Release Date:</strong> {movie.release_date}
+      </p>
+      <p className="text-gray-700 mb-4">
+        <strong>Rating:</strong> {movie.vote_average}
+      </p>
+      <a
+        href={`https://www.youtube.com/results?search_query=${movie.title} trailer`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:underline"
+      >
+        Watch Trailer
+      </a>
     </div>
   );
 };
 
-export default MovieDetailsPage;
+export default MovieDetails;
