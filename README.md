@@ -26,12 +26,13 @@
 
 
  Added the deployment link:   [Movie Explorer - Live Demo](https://movie-explorer-beryl-three.vercel.app/)
-### How to Run the Project
 
-Clone the repository:
+
+### Run The web
    ```bash
    git clone https://github.com/kasunUdayanga/Movie-Explorer.git
    cd Movie-Explorer
+  npm i
+  npm start
 
- - Added the deployment link:   [Movie Explorer - Live Demo](https://movie-explorer-beryl-three.vercel.app/)
 
